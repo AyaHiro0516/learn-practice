@@ -9,10 +9,10 @@ public class AbstractFactory {
     public static void main(String[] args) {
         GameFactory gameFactory1 = new CDProjektRed();
         GameFactory gameFactory2 = new Blizzard();
-        Game game1 = gameFactory1.playRPGGame();
-        Game game2 = gameFactory1.playCardGame();
-        Game game3 = gameFactory2.playRPGGame();
-        Game game4 = gameFactory2.playCardGame();
+        RPGGame game1 = gameFactory1.playRPGGame();
+        CardGame game2 = gameFactory1.playCardGame();
+        RPGGame game3 = gameFactory2.playRPGGame();
+        CardGame game4 = gameFactory2.playCardGame();
         game1.play();
         game2.play();
         game3.play();
@@ -20,32 +20,36 @@ public class AbstractFactory {
     }
 }
 
-interface Game {
+interface RPGGame {
     void play();
 }
 
-class HeartStone implements Game {
+interface CardGame {
+    void play();
+}
+
+class HeartStone implements CardGame {
     @Override
     public void play() {
         System.out.println("炉石传说，启动！");
     }
 }
 
-class Gwent implements Game {
+class Gwent implements CardGame {
     @Override
     public void play() {
         System.out.println("昆特牌，启动！");
     }
 }
 
-class WOW implements Game {
+class WOW implements RPGGame {
     @Override
     public void play() {
         System.out.println("魔兽世界，启动！");
     }
 }
 
-class Witcher implements Game {
+class Witcher implements RPGGame {
     @Override
     public void play() {
         System.out.println("巫师，启动！");
@@ -53,31 +57,31 @@ class Witcher implements Game {
 }
 
 interface GameFactory {
-    Game playRPGGame();
+    RPGGame playRPGGame();
 
-    Game playCardGame();
+    CardGame playCardGame();
 }
 
 class CDProjektRed implements GameFactory {
     @Override
-    public Game playRPGGame() {
+    public RPGGame playRPGGame() {
         return new Witcher();
     }
 
     @Override
-    public Game playCardGame() {
+    public CardGame playCardGame() {
         return new Gwent();
     }
 }
 
 class Blizzard implements GameFactory {
     @Override
-    public Game playRPGGame() {
+    public RPGGame playRPGGame() {
         return new WOW();
     }
 
     @Override
-    public Game playCardGame() {
+    public CardGame playCardGame() {
         return new HeartStone();
     }
 }
