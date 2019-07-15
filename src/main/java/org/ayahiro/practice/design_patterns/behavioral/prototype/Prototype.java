@@ -1,5 +1,7 @@
 package org.ayahiro.practice.design_patterns.behavioral.prototype;
 
+import java.io.*;
+
 /**
  * @Author ayahiro
  * @Description:
@@ -13,15 +15,27 @@ public class Prototype {
 
         System.out.println(resume1.toString());
         try {
+            //深克隆实现1
             Resume resume2 = (Resume) resume1.clone();
             System.out.println(resume1.workExperience == resume2.workExperience);
-        } catch (CloneNotSupportedException e) {
+
+            //深克隆实现2
+            ByteArrayOutputStream byteOut=new ByteArrayOutputStream();
+            ObjectOutputStream objOut=new ObjectOutputStream(byteOut);
+            objOut.writeObject(resume1);
+
+            ByteArrayInputStream byteIn=new ByteArrayInputStream(byteOut.toByteArray());
+            ObjectInputStream objIn=new ObjectInputStream(byteIn);
+            Resume resume3=(Resume)objIn.readObject();
+            System.out.println(resume1.workExperience == resume3.workExperience);
+
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
 }
 
-class Resume implements Cloneable {
+class Resume implements Serializable, Cloneable {
     String name;
     String sex;
     String age;
@@ -62,7 +76,7 @@ class Resume implements Cloneable {
     }
 }
 
-class WorkExperience implements Cloneable {
+class WorkExperience implements Serializable, Cloneable {
     String workDate;
     String company;
 
