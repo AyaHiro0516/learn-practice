@@ -14,11 +14,12 @@ public class SimpleFactory {
     }
 }
 
-
+//Product
 interface Game {
     void play();
 }
 
+//ConcreteProduct
 class HeartStone implements Game {
     @Override
     public void play() {
@@ -33,6 +34,7 @@ class Gwent implements Game {
     }
 }
 
+//SimpleFactory
 class GameFactory {
     private static final String HeartStone = "HeartStone";
     private static final String Gwent = "Gwent";

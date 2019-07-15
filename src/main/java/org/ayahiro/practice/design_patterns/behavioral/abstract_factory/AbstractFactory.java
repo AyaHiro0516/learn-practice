@@ -20,14 +20,17 @@ public class AbstractFactory {
     }
 }
 
+//AbstractProductA
 interface RPGGame {
     void play();
 }
 
+//AbstractProductB
 interface CardGame {
     void play();
 }
 
+//ProductB
 class HeartStone implements CardGame {
     @Override
     public void play() {
@@ -42,6 +45,7 @@ class Gwent implements CardGame {
     }
 }
 
+//ProductA
 class WOW implements RPGGame {
     @Override
     public void play() {
@@ -56,12 +60,14 @@ class Witcher implements RPGGame {
     }
 }
 
+//AbstractFactory
 interface GameFactory {
     RPGGame playRPGGame();
 
     CardGame playCardGame();
 }
 
+//ConcreteFactory1
 class CDProjektRed implements GameFactory {
     @Override
     public RPGGame playRPGGame() {
@@ -74,6 +80,7 @@ class CDProjektRed implements GameFactory {
     }
 }
 
+//ConcreteFactory2
 class Blizzard implements GameFactory {
     @Override
     public RPGGame playRPGGame() {

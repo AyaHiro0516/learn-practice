@@ -16,10 +16,12 @@ public class FactoryMethod {
     }
 }
 
+//Product
 interface Game {
     void play();
 }
 
+//ConcreteProduct
 class HeartStone implements Game {
     @Override
     public void play() {
@@ -34,10 +36,12 @@ class Gwent implements Game {
     }
 }
 
+//Factory
 interface GameFactory {
     Game playGame();
 }
 
+//ConcreteFactory
 class HeartStoneFactory implements GameFactory {
     @Override
     public Game playGame() {
