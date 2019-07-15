@@ -2,7 +2,7 @@ package org.ayahiro.practice.design_patterns.behavioral.builder;
 
 /**
  * @Author ayahiro
- * @Description:
+ * @Description: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
  * @Create: 2019/7/15
  */
 public class Builder {

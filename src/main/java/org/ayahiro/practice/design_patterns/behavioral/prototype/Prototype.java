@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * @Author ayahiro
- * @Description:
+ * @Description: 用原型实例指定创建对象的种类，并且通过拷贝这些原型,创建新的对象。
  * @Create: 2019/7/15
  */
 public class Prototype {
