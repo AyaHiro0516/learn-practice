@@ -1,4 +1,4 @@
-package org.ayahiro.practice.design_patterns.behavioral.prototype;
+package org.ayahiro.practice.design_patterns.creational.prototype;
 
 import java.io.*;
 

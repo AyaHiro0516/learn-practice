@@ -1,4 +1,4 @@
-package org.ayahiro.practice.design_patterns.behavioral.builder;
+package org.ayahiro.practice.design_patterns.creational.builder;
 
 /**
  * @Author ayahiro

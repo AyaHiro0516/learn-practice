@@ -1,4 +1,4 @@
-package org.ayahiro.practice.design_patterns.behavioral.factory_method;
+package org.ayahiro.practice.design_patterns.creational.factory_method;
 
 /**
  * @Author ayahiro
