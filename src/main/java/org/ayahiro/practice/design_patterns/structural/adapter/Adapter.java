@@ -27,18 +27,18 @@ interface Chinese {
 class ChineseSpeaker implements Chinese {
     @Override
     public void speakChinese() {
-        System.out.println("中国人说中文");
+        System.out.println("你吃午饭了吗");
     }
 }
 
 //Adaptee
 class JapaneseSpeaker {
     public void speakJapanese() {
-        System.out.println("日本人说日语");
+        System.out.println("昼食はもう食べましたか");
     }
 }
 
-//Adaptor by interface
+//Adapter by interface
 class JapaneseToChineseTranslatorByInterface implements Chinese {
     private JapaneseSpeaker japaneseSpeaker;
 
@@ -49,15 +49,15 @@ class JapaneseToChineseTranslatorByInterface implements Chinese {
     @Override
     public void speakChinese() {
         japaneseSpeaker.speakJapanese();
-        System.out.println("经过翻译，中国人听得懂");
+        System.out.println("经过翻译，中国人听得懂，表达的意思一样");
     }
 }
 
-//Adaptor by class
+//Adapter by class
 class JapaneseToChineseTranslatorByClass extends JapaneseSpeaker implements Chinese {
     @Override
     public void speakChinese() {
         super.speakJapanese();
-        System.out.println("经过翻译，中国人听得懂");
+        System.out.println("经过翻译，中国人听得懂，表达的意思一样");
     }
 }
