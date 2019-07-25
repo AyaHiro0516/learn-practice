@@ -35,6 +35,7 @@ class Request {
     }
 }
 
+//Handler
 abstract class Manager {
     protected String name;
 
@@ -51,6 +52,7 @@ abstract class Manager {
     abstract public void requestApplications(Request request);
 }
 
+//ConcreteHandler
 class CommonManager extends Manager {
     public CommonManager(String name) {
         super(name);
