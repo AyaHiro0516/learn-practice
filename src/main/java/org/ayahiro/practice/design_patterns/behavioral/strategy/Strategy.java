@@ -12,6 +12,9 @@ public class Strategy {
 
         TakeawayPlatform takeawayMCD = new TakeawayPlatform(new McDonalds());
         takeawayMCD.getFood();
+
+        TakeawayFactory takeawayFactory = new TakeawayFactory("KFC");
+        takeawayFactory.getFood();
     }
 }
 
@@ -41,6 +44,29 @@ class TakeawayPlatform {
 
     public TakeawayPlatform(FastFood fastFood) {
         this.fastFood = fastFood;
+    }
+
+    public void getFood() {
+        fastFood.getFood();
+    }
+}
+
+//策略模式结合简单工厂
+class TakeawayFactory {
+    FastFood fastFood = null;
+
+    private final String KFC = "KFC";
+    private final String McDonalds = "McDonalds";
+
+    public TakeawayFactory(String type) {
+        switch (type) {
+            case KFC:
+                fastFood = new FKC();
+                break;
+            case McDonalds:
+                fastFood = new McDonalds();
+                break;
+        }
     }
 
     public void getFood() {

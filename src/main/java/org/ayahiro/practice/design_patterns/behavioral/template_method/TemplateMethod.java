@@ -20,6 +20,7 @@ public class TemplateMethod {
 
 //AbstractClass
 abstract class MilkTea {
+    //模版方法，注意要加final让子类不能改写
     protected final void makeMilkTea() {
         addMilk();
         addTea();
