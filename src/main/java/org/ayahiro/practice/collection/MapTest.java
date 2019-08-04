@@ -37,5 +37,8 @@ public class MapTest {
         for (Object v : map.values()) {
             System.out.println("value= " + v);
         }
+
+        //lambda表达式遍历
+        map.forEach((k, v) -> System.out.println(k + " = " + v));
     }
 }
