@@ -7,7 +7,7 @@ package org.ayahiro.practice.design_patterns.behavioral.strategy;
  */
 public class Strategy {
     public static void main(String[] args) {
-        TakeawayPlatform takeawayKFC = new TakeawayPlatform(new FKC());
+        TakeawayPlatform takeawayKFC = new TakeawayPlatform(new KFC());
         takeawayKFC.getFood();
 
         TakeawayPlatform takeawayMCD = new TakeawayPlatform(new McDonalds());
@@ -24,7 +24,7 @@ abstract class FastFood {
 }
 
 //ConcreteStrategy
-class FKC extends FastFood {
+class KFC extends FastFood {
     @Override
     void getFood() {
         System.out.println("点开封菜！");
@@ -61,7 +61,7 @@ class TakeawayFactory {
     public TakeawayFactory(String type) {
         switch (type) {
             case KFC:
-                fastFood = new FKC();
+                fastFood = new KFC();
                 break;
             case McDonalds:
                 fastFood = new McDonalds();
