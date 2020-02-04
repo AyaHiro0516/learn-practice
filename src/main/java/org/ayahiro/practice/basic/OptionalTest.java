@@ -39,9 +39,10 @@ public class OptionalTest {
         User user1 = null;
 
         Optional<User> op1 = Optional.ofNullable(user);
-        System.out.println(op1.isPresent());
-        System.out.println(op1.get());
-        System.out.println(op1.orElse(user1));
+
+//        System.out.println(op1.isPresent());
+//        System.out.println(op1.get());
+//        System.out.println(op1.orElse(user1));
     }
 
     public static void test3(User user) {
