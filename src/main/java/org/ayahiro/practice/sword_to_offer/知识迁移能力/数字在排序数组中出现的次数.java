@@ -1,6 +1,6 @@
 package org.ayahiro.practice.sword_to_offer.知识迁移能力;
 
-public class 数字在排序数组中出现的次数 {
+public class    数字在排序数组中出现的次数 {
 
         public static int GetNumberOfK(int[] array, int k) {
             if (array == null || array.length == 0) return 0;

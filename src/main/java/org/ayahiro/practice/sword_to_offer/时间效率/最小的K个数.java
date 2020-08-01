@@ -8,10 +8,10 @@ public class 最小的K个数 {
     public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
         ArrayList<Integer> res = new ArrayList<>();
         int length = input.length;
-        if(k > length || k == 0){
+        if (k > length || k == 0) {
             return res;
         }
-        PriorityQueue<Integer> maxheap = new PriorityQueue<>(k, Comparator.reverseOrder());
+        PriorityQueue<Integer> maxheap = new PriorityQueue<>(k, (o1, o2) -> o2 - o1);
         for (int i = 0; i < input.length; ++i) {
             if (maxheap.size() != k) {
                 maxheap.offer(input[i]);

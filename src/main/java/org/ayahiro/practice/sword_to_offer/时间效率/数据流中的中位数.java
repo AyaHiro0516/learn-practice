@@ -1,4 +1,4 @@
-package org.ayahiro.practice.sword_to_offer.树;
+package org.ayahiro.practice.sword_to_offer.时间效率;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -9,12 +9,7 @@ public class 数据流中的中位数 {
         private PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 
         //大顶堆
-        private PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(15, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
+        private PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(15, (o1, o2) -> o2 - o1);
 
         //记录偶数个还是奇数个
         int count = 0;

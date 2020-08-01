@@ -10,16 +10,14 @@ public class 包含min函数的栈 {
 
         public void push(int node) {
             s.push(node);
-            if (sMin.empty()) {
-                sMin.push(node);
-            } else if (node < sMin.peek()) {
+            if (sMin.empty() || sMin.peek() > node) {
                 sMin.push(node);
             }
         }
 
         public void pop() {
-            int now = s.pop();
-            if (sMin.peek() == now) {
+            int node = s.pop();
+            if (node == sMin.peek()) {
                 sMin.pop();
             }
         }

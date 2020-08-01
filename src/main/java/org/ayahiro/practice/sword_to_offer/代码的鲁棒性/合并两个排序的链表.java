@@ -32,7 +32,7 @@ public class 合并两个排序的链表 {
             if (list2 != null) {
                 head.next = list2;
             }
-            return ans;
+            return ans.next;
         }
     }
 }

@@ -37,4 +37,41 @@ public class 字符串的全排列 {
             cs[j] = temp;
         }
     }
+
+    //DFS版
+    public static class Solution2 {
+        public static StringBuffer temp = new StringBuffer();
+        public static ArrayList<String> res = new ArrayList<>();
+
+        public static ArrayList<String> Permutation(String str) {
+            if (str != null && str.length() > 0) {
+                PermutationHelper(str.toCharArray());
+                Collections.sort(res);
+            }
+            return res;
+        }
+
+        public static void PermutationHelper(char[] cs) {
+            if (temp.length() == cs.length) {
+                System.out.println(temp.toString());
+                res.add(temp.toString());
+                return;
+            }
+            for (int i = 0; i < cs.length; ++i) {
+                char c = cs[i];
+                if (c != '*') {
+                    cs[i] = '*';
+                    temp.append(c);
+                    PermutationHelper(cs);
+                    temp.deleteCharAt(temp.length() - 1);
+                    cs[i] = c;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String s="aaa";
+        Solution2.Permutation(s);
+    }
 }

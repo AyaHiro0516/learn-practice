@@ -22,6 +22,7 @@ public class 反转链表 {
                 pre = head;
                 head = next;
             }
+            //为什么要返回pre  因为pre始终会替换上一次head的位置
             return pre;
         }
     }

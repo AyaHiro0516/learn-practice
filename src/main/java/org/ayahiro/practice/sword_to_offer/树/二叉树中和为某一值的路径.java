@@ -24,6 +24,7 @@ public class 二叉树中和为某一值的路径 {
                 dfs(root.left, target - value, cur, res);
                 dfs(root.right, target - value, cur, res);
             }
+            //这里是回溯的标志
             cur.remove(cur.size() - 1);
         }
     }
